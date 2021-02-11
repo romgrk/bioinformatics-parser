@@ -1,0 +1,34 @@
+{
+  "name": "bioinformatics-parser",
+  "version": "1.0.0",
+  "description": ".fasta and .fastq parsers",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx babel src --out-dir lib"
+  },
+  "keywords": [
+    "bioinformatics",
+    "fasta",
+    "fastq"
+  ],
+  "author": "Rom Grk <romgrk.cc@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "core-js": "3"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "entry",
+          "corejs": 3
+        }
+      ]
+    ]
+  }
+}
