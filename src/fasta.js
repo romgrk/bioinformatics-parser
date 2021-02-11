@@ -2,6 +2,8 @@
  * fasta.js
  */
 
+const LINE_LENGTH = 70
+
 
 /**
  * @typedef {Object} Fasta
@@ -64,12 +66,16 @@ export function reverseComplement(sequence, conversionsRef = null) {
 }
 
 /**
- * @param {Fasta} fasta
+ * @param {Fasta|Fasta[]} fasta
  * @returns {string} fasta file string
  */
-export function fastaToString(fasta) {
-  const LINE_LENGTH = 70
+export function stringify(fasta) {
+  if (Array.isArray(fasta))
+    return fasta.map(s => stringifySequence(s)).join('\n')
+  return stringifySequence(fasta)
+}
 
+function stringifySequence(fasta) {
   let result = '>' + fasta.description + '\n'
 
   let i;
