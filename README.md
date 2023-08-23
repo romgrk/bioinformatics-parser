@@ -3,7 +3,7 @@
 
 Simple package to read and write fasta and fastq inputs.
 
-Usage:
+Usage:asdas
 
 ```javascript
 const { fasta, fastq } = require('bioinformatics-parser')
